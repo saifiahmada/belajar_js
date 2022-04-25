@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>Extract String Parts</h2>
+	<p>1. Slice() method extract a part of string and returns the extracted parts in a new string, this method accept negative indexes </p>
+	<p>str.slice(7,13) of "Apple, Banana, Kiwi", results : </p>
+	<p id="demo"></p>
+	<p>2. Substring(), cannot accept negative indexes</p>
+	<p>str.slice(7,13) of "Apple, Banana, Kiwi", results : </p>
+	<p id="demo2"></p>
+	<script>
+		let str = "Apple, Banana, Kiwi";
+		document.getElementById("demo").innerHTML = str.slice(7,13);
+
+		document.getElementById("demo2").innerHTML = str.substring(7,13);
+	</script>
+</body>
+</html>

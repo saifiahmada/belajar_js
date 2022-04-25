@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>JS String</h2>
+	<p id="demo"></p>
+	<p id="demo2"></p>
+	<p id="demo3"></p>
+	<p id="demo4"></p>
+	<p id="demo5"></p>
+	<script>
+		let answer1 = "It's alright";
+		let answer2 = "He is called 'Johnny'";
+		let answer3 = 'He is called "Johnny"';
+
+		let text = "ABCDEFGHIJ";
+		let jumlah = text.length;
+
+		document.getElementById("demo").innerHTML = answer1 + "<br>" + answer2 + "<br>" +answer3 + "<br>" ;
+
+		document.getElementById("demo2").innerHTML = "Jumlah karakter dari " + text + " adalah " + jumlah;
+
+		let text1 = "We are the so-called \"Vikings\" from the north ";
+		document.getElementById("demo3").innerHTML = text1;
+
+		let x = "John";
+		let y = new String("John");
+
+		document.getElementById("demo4").innerHTML = "hasil (x==y) adalah " + (x==y);
+		document.getElementById("demo5").innerHTML = "hasil (x===y) adalah " + (x===y);
+
+
+	</script>
+</body>
+</html>

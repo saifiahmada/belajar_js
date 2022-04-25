@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<p>onchange | An HTML element has been changed</p>
+	<p>onclick | The user clicks an HTML element</p>
+	<p>onmouseover | The user moves the mouse over an HTML element</p>
+	<p>onmouseout | The user moves the mouse away from an HTML element</p>
+	<p>onkeydown | The user pushes a keyboard key</p>
+	<p>onload | The browser has finished loading the page</p>
+	
+	<button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Waktu</button>
+
+	<p id="demo"></p>
+
+	<button type="button" onclick="this.innerHTML=Date()">Waktu 2</button>
+
+	<button type="button" onclick="myFunction()">Function</button>
+
+	<p id="demo2"></p>
+
+	<script>
+		function myFunction() {
+			document.getElementById("demo2").innerHTML = Date();
+		}
+	</script>
+</body>
+</html>
