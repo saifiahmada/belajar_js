@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>scrip on head</title>
+	<script>
+		function ubah() {
+			document.getElementById('demo').innerHTML = 'Isi paragraf sudah berubah';
+		}
+
+		function awal() {
+			document.getElementById('demo').innerHTML = 'ini adalah paragraf';	
+		}
+
+	</script>
+</head>
+<body>
+	<h2>Change Paragraph</h2>
+
+	<p id="demo">ini adalah paragraf</p>
+
+	<button type="button" onclick="ubah()">Ubah isi paragraf</button>
+	<button type="button" onclick="awal()">Kembali</button>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>scrip on html</title>
+</head>
+<body>
+
+	<p id="demo">ini paragraf</p>
+
+	<button type="button" onclick="ubah()">Ubah isi parafgraf</button>
+	<button type="button" onclick="awal()">Reset awal parafgraf</button>
+
+	<script>
+		function awal() {
+			document.getElementById('demo').innerHTML = 'ini paragraf';
+		}
+
+		function ubah() {
+			document.getElementById("demo").innerHTML = 'berubah isi paragraf';
+		}
+	</script>
+
+</body>
+</html>
