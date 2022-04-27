@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pad</title>
+</head>
+<body>
+	<h2>padStart() method pads string with another string</h2>
+	<p id="demo"></p>
+	<h2>padEnd() method pads string with another string</h2>
+	<p id="demo2"></p>
+
+	<script>
+		let text = "5";
+		document.getElementById("demo").innerHTML = text.padStart(5,"0");
+		document.getElementById("demo2").innerHTML = text.padEnd(5,"0");
+	</script>
+</body>
+</html>

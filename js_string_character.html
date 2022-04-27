@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS String Character</title>
+</head>
+<body>
+	<h2>charAt() method returns the character at a given position in a string</h2>
+	<p id="demo"></p>
+
+	<h2>charCodeAt() method returns the unicode of the character at a given position in a string</h2>
+	<p id="demo2"></p>
+
+	<h2>ECMAScript 5 allows property access on strings</h2>
+	<p id="demo3"></p>
+
+	<h2>Using String.split()</h2>
+	<p id="demo4"></p>	
+
+	<script>
+		var text = "SAIFIAHMADA";
+		document.getElementById("demo").innerHTML = text.charAt(6);
+
+		document.getElementById("demo2").innerHTML = text.charCodeAt(6);
+		document.getElementById("demo3").innerHTML = text[6];
+		let teks = 'Hello';
+		const myArr = teks.split("");
+
+		teks = '';
+		for (let i = 0 ; i < myArr.length; i++) {
+			teks += myArr[i] + '<br>';
+		}
+		document.getElementById("demo4").innerHTML = teks;
+
+
+	</script>	
+</body>
+</html>

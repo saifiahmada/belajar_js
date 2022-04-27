@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS String Search</title>
+</head>
+<body>
+	<h2>The indexOf() method returns the position of the first occurence of a specified text</h2>
+	<p id="text"></p>
+	<p id="demo"></p>
+
+	<p id="demo2"></p>
+	<p id="urutan"></p>
+	<h2>The lastIndexOf() method returns the position of the last occurrence of a specified text</h2>
+	<p id="demo3"></p>
+	<h2>indexOf() dan lastIndexOf() mengembalikan nilai -1 jika tidak ditemukan</h2>
+	<h2>indexOf() dan lastIndexOf() menerima parameter kedua, sebagai posisi awal pencarian</h2>
+	<h2>search() method returns the position of the first occurence of a specified text in a string</h2>
+	<p id="demo4"></p>
+	<h2>match() search a string for "ain"</h2>
+	<p id="demo5"></p>
+	
+	<script>
+		let str = "Please locate where 'locate' occurs!";
+
+		document.getElementById("text").innerHTML = "Text asli : " + str;
+		document.getElementById("demo").innerHTML = "Posisi locate ada di : " +  str.indexOf("locate");
+		document.getElementById("demo2").innerHTML = "Posisi where ada di : " +  str.indexOf("where");
+		
+		const myArr = str.split("");
+
+		teks = '';
+		for (let i = 0 ; i < myArr.length; i++) {
+			teks += myArr[i] + '[' + i + ']' + '<br>';
+		}
+
+		document.getElementById("urutan").innerHTML = teks;
+
+		// lastIndexOf()
+		document.getElementById("demo3").innerHTML = "lastIndexOf('locate') adalah : " + str.lastIndexOf("locate");
+		// search()
+		document.getElementById("demo4").innerHTML = "search('locate') adalah : " + str.search("locate");
+		//match()
+		let text = "The rain in SPAIN stays mainly in the plain";
+		document.getElementById("demo5").innerHTML = text.match(/ain/g);
+	</script>
+</body>
+</html>
