@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS String Templates</title>
+</head>
+<body>
+	<h2>Template literals use back-ticks (``) to define a string</h2>
+	<p id="demo"></p>
+	<h4>Template literals allows variables in strings</h4>
+	<h4>Variable Substitutions</h4>
+	<p id="demo2"></p>
+	<h4>Expression Substitutions</h4>
+	<p id="demo3"></p>
+	<h4>Automatic replacing of expressions with real values is called string interpolation.</h4>
+
+	<h2>JS Template Literals</h2>
+	<p>Template literals allows variables in strings</p>
+
+	<p id="demo4"></p>
+
+
+	<h4>Template literals are not supported in Internet Explorer</h4>
+
+	<script>
+		let text = `Hello World`;
+		document.getElementById("demo").innerHTML = "`Hello World` = " + text;
+
+		let firstName = "Saifi";
+		let lastName = "Ahmada";
+
+		let text1 = `Welcome ${firstName}, ${lastName} !`;
+		document.getElementById("demo2").innerHTML = text1;
+
+		let price = 10;
+		let VAT = 0.25;
+		let total = `${ (price * ( 1 + VAT)).toFixed(2) }`;
+		document.getElementById("demo3").innerHTML = "`Total: ${ (price * ( 1 + VAT)).toFixed(2) }` = " + total;
+
+		let header = "Template Literals";
+		let tags = ["template literals" , "javascript" , "es6"];
+
+		let html = `<h2>${header}</h2>`;
+
+		for (const x of tags) {
+			html += `<li>${x}</li>`;
+		}
+
+		html += `</ul>`;
+
+		document.getElementById("demo4").innerHTML = html;
+
+	</script>
+</body>
+</html>

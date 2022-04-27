@@ -20,7 +20,26 @@
 	<p id="demo4"></p>
 	<h2>match() search a string for "ain"</h2>
 	<p id="demo5"></p>
-	
+	<h4>If a reguler expression does not include the g midifier (to perform a global search), the match() method will return only the first match in the string</h4>
+	<h4>Example global search case-insensitive for ain</h4>
+	<p id="demo6"></p>
+	<h4>includes() method returns true if a string contains a specified value</h4>
+	<h4>includes(searchValue)</h4>
+	<p id="demo7"></p>
+	<h4>includes(searchValue, start)</h4>
+	<p id="demo8"></p>
+	<h4>startsWith() method returns true if a string begins with a specified value, otherwise false</h4>
+	<h4>startsWith(searchValue)</h4>
+	<p id="demo9"></p>
+	<h4>startsWith(searchValue,start)</h4>
+	<p id="demo10"></p>
+
+	<h4>endsWith() method returns true if a string ends with a specified value, otherwise false</h4>
+	<h4>endsWith(searchValue)</h4>
+	<p id="demo11"></p>
+	<h4>endsWith(searchValue,length)</h4>
+	<p id="demo12"></p>
+
 	<script>
 		let str = "Please locate where 'locate' occurs!";
 
@@ -43,7 +62,21 @@
 		document.getElementById("demo4").innerHTML = "search('locate') adalah : " + str.search("locate");
 		//match()
 		let text = "The rain in SPAIN stays mainly in the plain";
-		document.getElementById("demo5").innerHTML = text.match(/ain/g);
+		document.getElementById("demo5").innerHTML = "text.match(/ain/g) = " + text.match(/ain/g);
+
+		document.getElementById("demo6").innerHTML = "text.match(/ain/gi) = " + text.match(/ain/gi);
+
+		// includes()
+		let text1 = "Hello world, welcome to the universe";
+		document.getElementById("demo7").innerHTML = text1 + ", text1.includes('world') = " + text1.includes("world");
+		document.getElementById("demo8").innerHTML = text1 + ", text1.includes('world', 6) = " + text1.includes("world", 6);
+		// startsWith()
+		document.getElementById("demo9").innerHTML = text1 + ", text1.startsWith('Hello') = " + text1.startsWith('Hello');
+		document.getElementById("demo10").innerHTML = text1 + ", text1.startsWith('world',6) = " + text1.startsWith('world',6);
+		// endsWith()
+		document.getElementById("demo11").innerHTML = text1 + ", text1.endsWith('universe') = " + text1.endsWith('universe');
+		document.getElementById("demo12").innerHTML = text1 + ", text1.endsWith('universe',36) = " + text1.endsWith('universe' , 36);
+
 	</script>
 </body>
 </html>
