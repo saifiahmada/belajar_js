@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Numners</title>
+</head>
+<body>
+	<h4>Numbers can write with or without decimals</h4>
+	<p id="demo"></p>
+	
+	<h4>Extra large or extra small numbers can be written with scientific (exponent) notation</h4>
+	<p id="demo2"></p>
+	
+	<h4>Integer Precision</h4>
+	<h4>Integers (numbers without a preiod or exponent) are accurate up to 15 digits</h4>
+	<p id="demo3"></p>
+
+	<h4>Floating point arithmetic is not always 100% accurate</h4>
+	<p id="demo4"></p>
+
+	<h4>But it helps to multiply and divide</h4>
+	<p id="demo5"></p>
+
+	<h4 style="color: red;">WARNING!! Javascript uses the + operator for both addition and concatenation</h4>
+	<h4 style="color: red;">Numbers are added, Strings are concatenated</h4>
+	<h4>If you add two numbers, the result will be a number</h4>
+	<p id="demo6"></p>
+
+	<h4>If you add two numeric strings, the result will be a concatenated string</h4>
+	<p id="demo7"></p>
+
+	<h4>If you add a number and a numeric string, the result will be a concatenated string</h4>
+	<p id="demo8"></p>
+
+	<h4>If you add a numeric string and a number, the result will be a concatenated string</h4>
+	<p id="demo9"></p>
+
+	<h4>A common mistake is to expect this result to be 30</h4>
+	<p id="demo10"></p>
+
+	<h4>A common mistake is to expect this result to be 102030:</h4>
+	<p id="demo11"></p>
+
+	<h4>Numeric String: JavaScript strings can have numeric content:</h4>
+	<h4>JavaScript will try to convert strings to numbers in all numeric operations:</h4>
+	<h4>Numeric String / Numeric String , its work</h4>
+	<p id="demo12"></p>
+
+	<h4>Numeric String * Numeric String , its work</h4>
+	<p id="demo13"></p>
+
+	<h4>Numeric String - Numeric String , its work</h4>
+	<p id="demo14"></p>
+
+	<h4>JavaScript will NOT convert strings to numbers when adding</h4>
+	<p id="demo15"></p>
+
+	<h4 style="color: red">NaN = Not a Number <br>
+		NaN is a JavaScript reserved word indicating that a number is not a legal number.
+	</h4>
+
+	<h4>A number divided by a non-numeric string becomes NaN (Not a Number)</h4>
+	<p id="demo16"></p>
+
+	<h4>isNan() method returns true if NaN</h4>
+	<p id="demo17"></p>
+
+	<h4>The typeof NaN is number</h4>
+	<p id="demo18"></p>
+
+	<h4>Infinity</h4>
+	<h4>Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.</h4>
+	<h4>While until infinity</h4>
+	<p id="demo19"></p>
+	<h4>Division by 0 (zero) also generates Infinity</h4>
+	<p id="demo20"></p>
+
+	<h4>Infinity is a number</h4>
+	<p id="demo21"></p>	
+
+	<script>
+		// Integer with or without decimals
+		let x = 3.14;
+		let y = 3;
+		document.getElementById("demo").innerHTML = x + "<br>" + y;
+		// Integer with exponent
+		x = 123e5;
+		y = 123e-5;
+		document.getElementById("demo2").innerHTML = x + "<br>" + y;
+		// Integer Precision
+		x = 999999999999999;
+		y = 9999999999999999;
+		document.getElementById("demo3").innerHTML = x + "<br>" + y;
+
+		// Floating 
+		x = 0.2 + 0.1;
+		document.getElementById("demo4").innerHTML = "0.2 + 0.1 = " + x;
+		
+		// Help
+		y = (0.2*10 + 0.1*10) / 10;
+		document.getElementById("demo5").innerHTML = "(0.2*10 + 0.1*10)/10 = " + y;
+
+		//number + number = number
+		x = 10;
+		y = 20;
+		let z = x + y;
+		document.getElementById("demo6").innerHTML = "x (10) + y (20) = " + z;
+		// string + string = string
+		x = "10";
+		y = "20";
+		z = x + y;
+		document.getElementById("demo7").innerHTML = "string (10) + string (20) = " + z;
+		// number + string
+		x = 10;
+		y = "20";
+		z = x + y;
+		document.getElementById("demo8").innerHTML = "number (10) + string (20) = " + z;
+		// string + number
+		x = "10";
+		y = 20;
+		z = x + y;
+		document.getElementById("demo9").innerHTML = "string (10) + number (20) = " + z;
+
+		var a = 10;
+		var b = 20;
+		document.getElementById("demo10").innerHTML = "The result is: " + a + b;
+
+		x = 10;
+		y = 20;
+		z = "30";
+		let result = x + y + z;
+		document.getElementById("demo11").innerHTML = result;
+
+		x = "100";
+		y = "10";
+		z =  x / y;
+		document.getElementById("demo12").innerHTML = "x string(100), y string(10), x / y = " + z;
+
+		x = "100";
+		y = "10";
+		z =  x * y;
+		document.getElementById("demo13").innerHTML = "x string(100), y string(10), x * y = " + z;
+
+		x = "100";
+		y = "10";
+		z =  x - y;
+		document.getElementById("demo14").innerHTML = "x string(100), y string(10), x - y = " + z;
+
+		x = "100";
+		y = "10";
+		z =  x + y;
+		document.getElementById("demo15").innerHTML = "x string(100), y string(10), x + y = " + z;
+
+		document.getElementById("demo16").innerHTML = "100 / 'Apple' = " +  100 / "Apple";
+		x = 100 / "Apple";
+		document.getElementById("demo17").innerHTML = "100 / 'Apple' = " + isNaN(x);
+
+		x = NaN;
+		document.getElementById("demo18").innerHTML = " x = NaN, typeof x = " + typeof x;
+
+		let myNumber = 2;
+		let txt = "";
+		while(myNumber != Infinity){
+			myNumber = myNumber * myNumber;
+			txt = txt + myNumber + "<br>";
+		}	
+		document.getElementById("demo19").innerHTML = txt;
+
+		x = 2 / 0;
+		document.getElementById("demo20").innerHTML = "Hasil 2 : 0 = " + x;
+		document.getElementById("demo21").innerHTML = "typeof Infinity = " + typeof Infinity;
+
+
+	</script>
+		
+</body>
+</html>
