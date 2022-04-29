@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Number Methods</title>
+</head>
+<body>
+	<h4>The toString() method returns a number as a string</h4>
+	<p id="demo"></p>
+
+	<h4>The toExponential() method return a string, with a number rounded and written using exponent notation<br>
+		A parameter defines the number of characters behind the decimal point
+	</h4>
+	<p id="demo2"></p>
+
+	<h4 style="color:blueviolet;">The toFixed() method (rounding method) returns a string, with the number written with a specified number of decimal</h4>
+	<p id="demo3"></p>
+
+	<h4 style="color: blue">The toPrecision() method returns a string, with a number written with a specified length</h4>
+	<p id="demo4"></p>
+
+	<h4 style="color:rebeccapurple;">The valueOf() method returns a number as a number</h4>
+	<p id="demo5"></p>
+
+	<h4 style="color: green;">
+		In JavaScript, a number can be a primitive value (typeof = number) or an 	object (typeof = object).
+		<br>
+		The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.
+		<br>
+		There is no reason to use it in your code.
+		<br>
+		All JavaScript data types have a valueOf() and a toString() method.
+	</h4>
+
+	<hr>
+
+	<h4 style="color:darkgreen;">
+		Converting Variables to Numbers
+		<br>
+		There are 3 JavaScript methods that can be used to convert variables to numbers:
+		<br>
+		Number()<br>
+		parseInt()<br>
+		parseFloat()
+		<br>
+		These methods are not number methods, but global JavaScript methods.
+	</h4>
+
+	<h4>Number() method can be used to convert JavaScript variables to numbers</h4>
+	<p id="demo6"></p>
+	<h4>If the number cannot be converted, NaN (Not a Number) is returned.</h4>
+	<h4>The Number() Method Used on Dates</h4>
+	<p id="demo7"></p>
+	<h4>The Number() method returns the number of milliseconds since 1.1.1970.</h4>
+	<p id="demo8"></p>
+
+	<h4>The Number() method can convert a date to a number</h4>
+	<p id="demo9"></p>
+
+	<h4>The parseInt method parses a string and returns a whole number. Spaces are allowed. Only the first number is returned</h4>
+	<p id="demo10"></p>
+
+	<h4>The parseFloat() Method parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:</h4>
+	<p id="demo11"></p>
+
+	<script>
+		let x = 123;
+		document.getElementById("demo").innerHTML =
+		"x.toString() " + x.toString() + "<br>" +
+		"(123).toString() " + (123).toString() + "<br>" +
+		"(100 + 23).toString() " + (100 + 23).toString();
+
+		x = 9.656;
+		document.getElementById("demo2").innerHTML =
+		"x = " + x + "<br>" + 
+		"x.toExponential() " + x.toExponential() + "<br>" +
+		"x.toExponential(2) " + x.toExponential(2) + "<br>" +
+		"x.toExponential(4) " + x.toExponential(4) + "<br>" +
+		"x.toExponential(6) " + x.toExponential(6);
+
+		document.getElementById("demo3").innerHTML =
+		"x = " + x + "<br>" + 
+		"x.toFixed(0) = " + x.toFixed(0) + "<br>" +
+		"x.toFixed(2) = " + x.toFixed(2) + "<br>" +
+		"x.toFixed(4) = " + x.toFixed(4) + "<br>" +
+		"x.toFixed(6) = " + x.toFixed(6);
+
+		document.getElementById("demo4").innerHTML =
+		"x = " + x + "<br>" + 
+		"x.toPrecision() = " + x.toPrecision() + "<br>" +
+		"x.toPrecision(2) = " + x.toPrecision(2) + "<br>" +
+		"x.toPrecision(4) = " + x.toPrecision(4) + "<br>" +
+		"x.toPrecision(6) = " + x.toPrecision(6);
+
+		x = 123;
+		document.getElementById("demo5").innerHTML =
+		"x = " + x + "<br>" +
+		"x.valueOf()" + x.valueOf() + "<br>" +
+		"(123).valueOf() " + (123).valueOf() + "<br>" +
+		"(100+23).valueOf() " + (100+23).valueOf();
+
+		document.getElementById("demo6").innerHTML =
+		Number(true) + "<br>" +
+		Number(false) + "<br>" +
+		Number("10") + "<br>" +
+		Number("  10") + "<br>" +
+		Number("10  ") + "<br>" +
+		Number(" 10  ") + "<br>" +
+		Number("10.33") + "<br>" +
+		Number("10,33") + "<br>" +
+		Number("10 33") + "<br>" +
+		Number("John") + "<br>" ;
+
+		x = new Date("1970-01-01");
+		document.getElementById("demo7").innerHTML = "x = Date('1970-01-01') , Number(x) => " + Number(x);
+
+		x = new Date("1970-01-02");
+		document.getElementById("demo8").innerHTML = "x = Date('1970-01-02') , Number(x) => " + Number(x);
+
+		x = new Date("2017-09-30");
+		document.getElementById("demo9").innerHTML = "x = new Date('2017-09-30'), Number(x) => " + Number(x);
+
+		document.getElementById("demo10").innerHTML =
+		"parseInt('-10') " + parseInt("-10") + "<br>" +
+		"parseInt('-10.33') " + parseInt("-10.33") + "<br>" +
+		"parseInt('10') " + parseInt("10") + "<br>" +
+		"parseInt('10.33') " + parseInt("10.33") + "<br>" +
+		"parseInt('10 6') " + parseInt("10 6") + "<br>" +
+		"parseInt('10 years') " + parseInt("10 years") + "<br>" +
+		"parseInt('years 10') " + parseInt("years 10");
+
+		document.getElementById("demo11").innerHTML =
+		"parseFloat('10') " + parseFloat('10') + '<br>' +
+		"parseFloat('10.33') " + parseFloat('10.33') + '<br>' +
+		"parseFloat('10 6') " + parseFloat('10 6') + '<br>' +
+		"parseFloat('10 years') " + parseFloat('10 years') + '<br>' +
+		"parseFloat('years 10') " + parseFloat('years 10');
+
+	</script>
+</body>
+</html>

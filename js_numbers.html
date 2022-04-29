@@ -79,6 +79,26 @@
 	<h4>Infinity is a number</h4>
 	<p id="demo21"></p>	
 
+	<h4>Hexadecimal<br>Numerics constants, processed by 0x, are interpreted as hexadecimal</h4>
+	<p id="demo22"></p>
+	<h4 style="color:red">Never write a number with a leading zero (like 07)<br>Some JavaScript versions interpret numbers as octal if they are written with a leading zero.</h4>
+
+	<h4 style="color:blue">The toString() method can output numbers from base 2 to 36</h4>
+	<p id="demo23"></p>
+
+	<h4 style="color:red">JavaScript Numbers as Objects</h4>
+	<h4>Normally JavaScript numbers are primitive values created from literals<br>
+		But numbers can also be defined as objects with the keyword new
+	</h4>
+	<h4>Do not create Number objects.<br>The new keyword complicates the code and slows down execution speed.<br>Number Objects can produce unexpected results</h4>
+	<p id="demo24"></p>
+
+	<h4>check equal</h4>
+	<p id="demo25"></p>
+
+	<h4>Numbers and Number objects cannot be safely compared</h4>
+	<p id="demo26"></p>
+
 	<script>
 		// Integer with or without decimals
 		let x = 3.14;
@@ -170,6 +190,29 @@
 		x = 2 / 0;
 		document.getElementById("demo20").innerHTML = "Hasil 2 : 0 = " + x;
 		document.getElementById("demo21").innerHTML = "typeof Infinity = " + typeof Infinity;
+
+		x = 0xFF;
+		document.getElementById("demo22").innerHTML = "0xFF = " + x;
+
+		myNumber = 32;
+
+		document.getElementById("demo23").innerHTML = "Decimal 32 = " + "<br><br>" +
+		"Hexatrigesimal (base 36) : " + myNumber.toString(36) + "<br>" +
+		"Duotrigesimal (base 36) : " + myNumber.toString(32) + "<br>" +
+		"Hexadecimal (base 16) : " + myNumber.toString(16) + "<br>" +
+		"Duodecimal (base 12) : " + myNumber.toString(12) + "<br>" +
+		"Desimal (base 10) : " + myNumber.toString(10) + "<br>" +
+		"Ocatal (base 8) : " + myNumber.toString(8) + "<br>" +
+		"Binary (base 2) : " + myNumber.toString(2) ;
+
+		x = 123;
+		y = new Number(123);
+
+		document.getElementById("demo24").innerHTML = "x = 123 = " + typeof x + "<br>" + "new Number(123) = " + typeof y;
+
+		document.getElementById("demo25").innerHTML =  "check equal (x==y) = " +  (x==y);
+
+		document.getElementById("demo26").innerHTML =  "check equal (x===y) = " +  (x===y);
 
 
 	</script>
