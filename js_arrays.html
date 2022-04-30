@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Array</title>
+</head>
+<body>
+	<h4 style="color: green;">JS Array const cars = ["Saab","Volvo","BMW"]</h4>
+	<p id="demo"></p>
+	<h4 style="color: green;">JS Array const cars = []; cars[0] = "Saab" .... </h4>
+	<p id="demo2"></p>
+	<h4 style="color: red;">cars = new Array("Saab","Volvo","BMW")</h4>
+	<p id="demo3"></p>
+
+	<h4>For simplicity, readability and execution speed, use the array literal method. array declaration without new Array() keyword</h4>
+
+	<h4>Accessing Array Elemen</h4>
+	<p id="demo4"></p>
+
+	<h4>Note: Array indexes start with 0.</h4>
+
+	<hr>
+
+	<h4>Changing an Array Element</h4>
+	<p id="demo5"></p>
+
+	<h4>Arrays are Objects</h4>
+	<p id="demo6"></p>
+
+	<h4 style="color: darkgreen;">Arrays use numbers to access its elements</h4>
+	<p id="demo7"></p>
+
+	<h4 style="color: darkred;">JS Object, JavaScript uses names to access object properties</h4>
+	<p id="demo8"></p>
+
+	<h4 style="color: seagreen;">Array Elements Can Be Objects</h4>
+	<h5>
+		JavaScript variables can be objects. Arrays are special kinds of objects.
+		<br>
+		Because of this, you can have variables of different types in the same Array.
+		<br>
+		You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array
+	</h5>
+	<ul>
+		<li>myArray[0] = Date.now;</li>
+		<li>myArray[1] = myFunction;</li>
+		<li>myArray[2] = myCars;</li>
+	</ul>
+
+	<h4>Array Properties and Methods</h4>
+	<ul>
+		<li>cars.length //returns the number of elements</li>
+		<li>cars.sort() // Sorts the array</li>
+	</ul>
+
+	<h4 style="color:darkred;">The length Property</h4>
+	<p id="demo9"></p>
+
+	<h4>Accessing the First Array Element</h4>
+	<p id="demo10"></p>
+
+	<h4>Accessing the Last Array Element</h4>
+	<p id="demo11"></p>
+
+	<h4>Looping Array Elements</h4>
+	<p id="demo12"></p>
+
+	<h4>Looping Array Elements Array.forEach()</h4>
+	<p id="demo13"></p>
+
+	<h4>
+		Adding Array Elements
+		<br>
+		The push method appends a new element to an array.
+	</h4>
+	<button onclick="myFunc()">Try It</button>
+	<p id="demo14"></p>
+
+	<h4 style="color:red;">
+		The length property provides an easy way to append new elements to an array without using the push() method.
+		<br>
+		fruits[fruits.length] = "Lemon";
+	</h4>
+	<hr>
+	<h4>WARNING !!! Adding elements with high indexes can create undefined "holes" in an array:</h4>
+
+	<h4>Associative Arrays</h4>
+	<h4 style="color:red;">
+		Many programming languages support arrays with named indexes.
+		<br>
+		Arrays with named indexes are called associative arrays (or hashes).
+		<br>
+		JavaScript does not support arrays with named indexes.
+		<br>
+		In JavaScript, arrays always use numbered indexes.
+	</h4>
+	<hr>
+	<h4>The Difference Between Arrays and Objects</h4>
+	<ul>
+		<li>In JavaScript, arrays use numbered indexes.</li>
+		<li>In JavaScript, objects use named indexes.</li>
+	</ul>
+	<h4>Arrays are a special kind of objects, with numbered indexes.</h4>
+	<h4>When to Use Arrays. When to use Objects.</h4>
+	<ul>
+		<li>JavaScript does not support associative arrays.</li>
+		<li>You should use objects when you want the element names to be strings (text).</li>
+		<li>You should use arrays when you want the element names to be numbers.</li>
+	</ul>
+
+	<h4>JavaScript new Array()</h4>
+	<ul>
+		<li>JavaScript has a built in array constructor new Array().</li>
+		<li>But you can safely use [] instead.</li>
+	</ul>
+	<h4>Declaration array : [] and new Array()</h4>
+	<h4>Avoid using new Array(). Use [] instead.</h4>
+	<p id="demo15"></p>
+
+	<h4>How to Recognize an Array</h4>
+	<h4>Array typeof returns object </h4>
+	<h4>Solution 1 : Array.isArray()</h4>
+	<p id="demo16"></p>
+	<h4>Solution 2 : instanceof</h4>
+	<p id="demo17"></p>	
+	<p id="demo18"></p>	
+
+	<script>
+		const cars = ["Saab","Volvo","BMW"];
+		document.getElementById("demo").innerHTML = 'const cars = ["Saab","Volvo","BMW"]; = ' + cars;
+
+		cars2 = [];
+		cars2[0] = "Saab";
+		cars2[1] = "Volvo";
+		cars2[2] = "BMW";
+		document.getElementById("demo2").innerHTML =  cars2;		
+
+		cars3 = new Array("Saab","Volvo","BMW");
+		document.getElementById("demo3").innerHTML =  cars3;		
+
+		const cars4 = ["Saab","Volvo","BMW"];
+		document.getElementById("demo4").innerHTML = 'const cars4 = ["Saab","Volvo","BMW"];' + "<br>" +  "cars4[0] = " + cars4[0];		
+
+		const cars5 = ["Saab","Volvo","BMW"];
+		cars5[0] = "Opel";
+		document.getElementById("demo5").innerHTML = 'Before changes const cars5 = ["Saab","Volvo","BMW"] ' + '<br>' + 'modify cars[0] = "Opel" ' + ' then ' + cars5;
+
+		document.getElementById("demo6").innerHTML = "typeof cars5 array is " + typeof cars5;
+
+		const person = ["John","Doe",46];
+		document.getElementById("demo7").innerHTML = "person[0] of person['John','Doe',46] = " + person[0];
+
+		const person2 = {firstName: "John", lastName: "Doe", age: 46}; 
+		document.getElementById("demo8").innerHTML = 
+		'const person2 = {firstName: "John", lastName: "Doe", age: 46}; ' + "<br>" +
+		"person2.firstName " + person2.firstName + "<br>" +
+		"person2.lastName " + person2.lastName + "<br>" +
+		"person2.age " + person2.age ;
+
+		const fruits = ["Banana", "Orange", "Apple" , "Mango"];
+		document.getElementById("demo9").innerHTML = 
+		'const fruits = ["Banana", "Orange", "Apple" , "Mango"];' + "<br>" +
+		'fruits.length = ' + fruits.length;
+
+		const fruits2 = ["Banana", "Orange", "Apple" , "Mango"];
+		document.getElementById("demo10").innerHTML = 
+		'const fruits2 = ["Banana", "Orange", "Apple" , "Mango"];' + "<br>" +
+		'fruits2[0] = ' + fruits2[0];
+
+		document.getElementById("demo11").innerHTML = 
+		'the last element fruits2[fruits2.length - 1] is ' + fruits2[fruits2.length - 1];
+
+		let txt = '<ul>';
+		for(let i = 0 ; i < fruits2.length ; i++) {
+			txt += '<li>' + fruits2[i] + '</li>';
+		}
+		txt += '</ul>';
+
+		document.getElementById("demo12").innerHTML = txt;
+
+		let txt2 = '<ul>';
+		fruits2.forEach(myFunction);
+		txt2 += '</ul>';
+
+		function myFunction(value) {
+			txt2 += '<li>' + value + '</li>';
+		}
+
+		document.getElementById("demo13").innerHTML = txt2;	
+
+		const buahs = ["Banana","Orange","Apple"];	
+		document.getElementById("demo14").innerHTML = buahs;	
+
+		function myFunc() {
+			buahs.push("Lemon");
+			document.getElementById("demo14").innerHTML = buahs;
+		}
+
+		const points = [40,100,1,5,25,10];
+		document.getElementById("demo15").innerHTML = 
+		'const points = [40,100,1,5,25,10];' + "<br>" +
+		'points[0] = ' + points[0];
+
+		document.getElementById("demo16").innerHTML = 
+		'const points = [40,100,1,5,25,10];' + '<br>' +
+		'Array.isArray(points) = ' + Array.isArray(points);
+
+		document.getElementById("demo17").innerHTML = 
+		'const points = [40,100,1,5,25,10];' + '<br>' +
+		'points instanceof Array = ';
+		document.getElementById("demo18").innerHTML = points instanceof Array;
+
+
+	</script>
+</body>
+</html>

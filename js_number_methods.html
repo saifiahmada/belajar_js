@@ -64,6 +64,55 @@
 	<h4>The parseFloat() Method parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:</h4>
 	<p id="demo11"></p>
 
+	<h4>Number Properties</h4>
+	<table>
+		<tr>
+			<th>Property</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>MAX_VALUE</td>
+			<td>Returns the largest number possible in JS</td>
+		</tr>
+		<tr>
+			<td>MIN_VALUE</td>
+			<td>Returm the smallest number possible in JS</td>
+		</tr>
+		<tr>
+			<td>POSITIVE_INFINITY</td>
+			<td>Represent Infinity (returned on overflow)</td>
+		</tr>
+		<tr>
+			<td>NEGTIVE_INFINITY</td>
+			<td>Represent Negative Infinity (returned on overflow)</td>
+		</tr>
+		<tr>
+			<td>NaN</td>
+			<td>Represent a "Not a Number" value</td>
+		</tr>
+	</table>
+
+	<h4>MAX_VALUE returns the largest possible number in JavaScript.</h4>
+	<p id="demo12"></p>
+
+	<h4>MIN_VALUE returns the smallest possible number in JavaScript.</h4>
+	<p id="demo13"></p>
+
+	<h4>POSITIVE_INFINITY</h4>
+	<p id="demo14"></p>
+	<p id="demo15"></p>
+
+	<h4>NEGATIVE_INFINITY</h4>
+	<p id="demo16"></p>
+	<p id="demo17"></p>
+
+	<h4>Number.NaN</h4>
+	<p id="demo18"></p>
+	<p id="demo19"></p>
+
+	<h4>Number Properties Cannot be Used on Variables</h4>
+	<p id="demo20"></p>
+
 	<script>
 		let x = 123;
 		document.getElementById("demo").innerHTML =
@@ -136,6 +185,34 @@
 		"parseFloat('10 6') " + parseFloat('10 6') + '<br>' +
 		"parseFloat('10 years') " + parseFloat('10 years') + '<br>' +
 		"parseFloat('years 10') " + parseFloat('years 10');
+
+		x = Number.MAX_VALUE;
+		document.getElementById("demo12").innerHTML = "x = Number.MAX_VALUE = " + x;
+
+		x = Number.MIN_VALUE;
+		document.getElementById("demo13").innerHTML = "x = Number.MIN_VALUE = " + x;
+
+		x = Number.POSITIVE_INFINITY;
+		document.getElementById("demo14").innerHTML = "x = Number.POSITIVE_INFINITY = " + x;
+
+		x = 1 / 0;
+		document.getElementById("demo15").innerHTML = "x = 1 / 0 = " + x;
+
+		x = Number.NEGATIVE_INFINITY;
+		document.getElementById("demo16").innerHTML = "x = Number.NEGATIVE_INFINITY = " + x;
+
+		x = -1 / 0;
+		document.getElementById("demo17").innerHTML = "x = -1 / 0 = " + x;
+
+		document.getElementById("demo18").innerHTML = "Number.NaN = " + Number.NaN;
+
+		document.getElementById("demo19").innerHTML = "100 / 'Apple' = " + 100 / "Apple";
+		
+		x = 6;
+		document.getElementById("demo20").innerHTML = "x = 6 ; x.MAX_VALUE = " + x.MAX_VALUE;		
+
+
+
 
 	</script>
 </body>
