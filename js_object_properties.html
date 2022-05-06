@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Object Properties</title>
+</head>
+<body>
+    <h4>JS Properties</h4>
+    <p>Properties are the values associated with a javascript object</p>
+    <p>A javascript object is a collection of unordered properties</p>
+    <p>Properties can usually be cahnged, added, and deleted, but some are read only</p>
+    <h4>Accessing Javascript Porpertoes</h4>
+    <p>objectName.property // example : person.firtsName</p>
+    <p>objectName["property"] // example : person["firstName"]</p>
+    <p>objectName[expression] // x = firstName; person[x]</p>
+
+    <h4>Javascript for in loop</h4>
+    <p>for(let variable in object) { //code to be executed }</p>
+    <p id="demo"></p>
+    <script>
+        const person = {
+            fname: "John",
+            lname: "Doe",
+            age:25
+        };
+        let txt = "";
+        for(let x in person) {
+            txt += person[x] + " ";
+        }
+        document.getElementById("demo").innerHTML = txt;
+    </script>
+    <h4>Adding New Properties</h4>
+    <p>You can add new properties to an existing object by simply giving it a value</p>
+    <p>Assume that the person object already exists - you can  then give it new properties</p>
+    <p id="demo2"></p>
+    <script>
+        const person1 = {
+            firtsName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyecolor: "blue"
+        };
+        person1.nationality = "English";
+        document.getElementById("demo2").innerHTML = person1.firtsName + " is " + person1.nationality + ".";
+    </script>
+    <h4>Delete Properties</h4>
+    <p>The delete keyword deletes a property from an object</p>
+    <p id="demo3"></p>
+    <script>
+        const person2 = {
+            firtsName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyecolor: "blue"
+        };
+        delete person2.age;
+        document.getElementById("demo3").innerHTML = person2.firtsName + " is " + person2.age + " years old"
+    </script>
+    <h4>Nested Objects</h4>
+    <p>Values in an object can be another object</p>
+    <p id="demo4"></p>
+    <script>
+        const myObj = {
+            name: "John",
+            age: 30,
+            cars: {
+                car1: "Ford",
+                car2: "BMW",
+                car3: "Fiat"
+            }
+        };
+        document.getElementById("demo4").innerHTML = myObj.cars.car1;
+    </script>
+    <p>You can access nested objects using the dot notation or the bracket notation</p>
+    <p>myObj.cars.car2</p>
+    <p>myObj.cars["car2]</p>
+    <p>myObj["cars"]["car2]</p>
+    <h4>Nested Arrays and Objects</h4>
+    <p>Values in objects can be an arrays, and values in arrays can be objects</p>
+    <p id="demo5"></p>
+    <script>
+        let x = "";
+        const myOb = {
+            name: "John",
+            age: 30,
+            cars: [
+                {name: "Ford", models:["Fiesta", "Focus","Mustang"]},
+                {name: "BMQ", models:["320","X3","X5"]},
+                {name: "Fiat", models:["500","Panda"]}
+            ]
+        };
+        for( let i in myOb.cars ){
+            x += "<h2>" + myOb.cars[i].name + "</h2>";
+            for(let j in myOb.cars[i].models) {
+                x += myOb.cars[i].models[j] + "<br>";
+            }
+        }
+        document.getElementById("demo5").innerHTML = x;
+    </script>
+    <h4>Javascript "this" keyword</h4>
+    <p id="demo6"></p>
+    <script>
+        //create an object
+        const person3 = {
+            firtsName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function() {
+                return this.firtsName + " " + this.lastName;
+            }
+        };
+        document.getElementById("demo6").innerHTML = person3.fullName();
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Array Iteration</title>
+</head>
+<body>
+    <H4>The forEach() method </H4>
+    <p id="demo"></p>
+    <h4>Array Map()</h4>
+    <p id="demo2"></p>
+
+
+    <script>
+        const numbers = [45,4,9,16,25];
+        let  txt = "";
+        numbers.forEach(myFunction);
+        document.getElementById("demo").innerHTML = txt;
+        function  myFunction(value, index, array) {
+            txt += value + "<br>";
+        }
+
+        const numbers1 = [45,4,9,16,25];
+        const numbers2 = numbers1.map(myFunction2);
+        document.getElementById("demo2").innerHTML = numbers2;
+        function myFunction2(value , index , array){
+            return value * 2;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Array Const</title>
+</head>
+<body>
+    <p>in 2015 JS introduced an important new keyword : const</p>
+    <h4>Cannot be Reassigned
+        <br>
+        An array declared with const cannot be reassigned
+    </h4>
+    <p>const cars = ["Saab","Volvo","BMW"]
+        <br>
+        cars = ["Toyota","Volvo","Audi"] // ERROR
+    </p>
+    <h4>Arrays are not constants</h4>
+    <p>The keyword const is a little misleading
+        <br>
+        It does NOT define a constant array, It defines a constant reference to an array
+        <br>
+        Because of this, we can still change the elements of a constant array
+    </p>
+    <h4>Elements Can be Reassigned</h4>
+    <p>Elemen dari array dapat diubah</p>
+    <h4>Assigned When Declared</h4>
+    <p>JS const variables must be assigned a value when they are declared
+    <br>
+        Meaning: an arrays declared with const must be initialized when it declared
+        <br>
+        Using const without initializing the array is a syntax error
+        <br>
+        Berbeda jika array dideklarasikan menggunakan var dapat diinisialisasi pada sembarang tempat
+    </p>
+<h4>An array declared with const has block scope (beda ketika menggunakan vars)</h4>
+
+
+</body>
+</html>

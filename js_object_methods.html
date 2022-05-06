@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Object Methods</title>
+</head>
+<body>
+    <h4>What is <b>this</b></h4>
+    <p>in JS, the 'this' keyword refers to an object </p>
+    <p>Which object depends on how this is being invoked (used or called)</p>
+    <p>The this keyword refers to different objects depending on how it used</p>
+    <ul>
+        <li>In an object method, 'this' refers to the object</li>
+        <li>Alone, 'this' refers to the global object</li>
+        <li>In a function, 'this' referes to the global object</li>
+        <li>In a function, in strict mode, 'this' is undefined</li>
+        <li>In an event, 'this' refers to the element that received the event </li>
+        <li>Method like call(), apply(), and bind() can refer 'this' to any object</li>
+
+    </ul>
+    <p style="color: red"><b>NOTE:</b>'this' is not a variable, It is a keyword, You cannot change the value of 'this'</p>
+    <h4>JS methods are actions that can be performed on object</h4>
+    <p>A JS method is a property containing a function definition</p>
+    <p>Methods are functions stored as object properties</p>
+    <h4>Accessing Object Methods</h4>
+    <p>You can access an object method with the following syntax:</p>
+    <p>objectName.methodName()</p>
+    <h4>Adding a Method to an Object</h4>
+    <p>person.name = function() {</p>
+    <p>return this.firtsName + " " + this.lastName</p>
+    <p>};</p>
+    <p>If you access the fullName property. without (), it will return the function definitions</p>
+    <h4>How to display JS Objects</h4>
+    <p>document.getElementById("demo").innerHTML = person</p>
+    <p>Displaying a JS object will output -> [Object Object]</p>
+    <p>Some common solutions to display JS objects are:</p>
+    <ul>
+        <li>Displaying the object properties by name, ex : person.city</li>
+        <li>Displaying the object properties in a loop, ex: for(let x in person)</li>
+        <li>Displaying the object using Objects.values(), ex: const myArray = Object.values(person)</li>
+        <li>Displaying the object using JSON.stringify(), ex: myString = JSON.stringify(person) => results JSON notation {"name":"John","age":50}</li>
+    </ul>
+    <h4>Stringify Dates : converts dates to strings</h4>
+    <h4>Stringify Function will not stringify function</h4>
+    <p>This can be fixed, if you convert the function into strings before stringifying </p>
+    <p>person.age = person.age.toString()</p>
+    <h4>Stringify Arrays</h4>
+    <p>const arr = ["John","Peter","Sally","Jane"]</p>
+    <p>let myString = JSON.stringify(arr);</p>
+    <p>Results JSON Notation : ["John","Peter","Sally","Jane"] </p>
+</body>
+</html>
